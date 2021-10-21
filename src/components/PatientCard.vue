@@ -21,12 +21,12 @@
         </router-link>
         <div v-if="plist.status == '1'">
           Already Inject {{ plist.status }} dose
-          <span class="material-icons-outlined"> medication </span>
+        </div>
+        <div v-else-if="plist.status == 'null'">
+          Already Inject 0 dose
         </div>
         <div v-else>
           Already Inject {{ plist.status }} dose
-          <span class="material-icons-outlined"> medication </span
-          ><span class="material-icons-outlined"> medication </span>
         </div>
       </div>
     </q-img>

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PatientList from '../views/PatientList.vue'
 import About from '../views/About.vue'
-
+import Login from '@/views/LoginForm.vue'
 import Layout from '../views/detailsPage/Layout.vue'
 import userInfo from '../views/detailsPage/userInfo.vue'
 import vaccineInfo from '../views/detailsPage/vaccineInfo.vue'
@@ -21,6 +21,11 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: () => import('../views/Dashboard.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   },
   {
     path: '/about',
