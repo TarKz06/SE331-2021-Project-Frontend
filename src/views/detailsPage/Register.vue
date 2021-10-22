@@ -5,23 +5,20 @@
 
 <script>
 export default {
-  props: ['event'],
+  props: ['patient'],
   inject: ['GStore'], // <---- Inject the Global Store
   methods: {
     register() {
       // Assuming successful API call to register them
       this.GStore.flashMessage =
-        'You are successfully registered for ' + this.event.title
+        'You are successfully registered for ' + this.patient.name
       setTimeout(() => {
         // After 3 seconds remove it
         this.GStore.flashMessage = ''
       }, 3000)
-      // Set a flash message to appear on the next page loaded which says
-      // 'You are successfully registered for ' + this.event.title
-
       this.$router.push({
         name: 'Login',
-        params: { id: this.event.id }
+        params: { id: this.patient.id }
       })
     }
   }
