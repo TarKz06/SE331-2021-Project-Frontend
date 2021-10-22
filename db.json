@@ -254,5 +254,22 @@
         }
       ]
     }
+  ],
+  "doctor": [
+    {
+      "did": "100",
+      "dname": "Khematat",
+      "dimg": "https://lh3.googleusercontent.com/proxy/tadj-esSZ47lUqjF5OXqE5SGgTQhscF3iE-YEXl7dtL83YtqahzSPOinEMeYSYQUkk2w8ezQ85u0OXRHgbVX6F1mTVcMfSTJZEjZvWkZk1pV_G1--qX5WczP6Yi5sijhpHjRMZxfig4YspBMczSk"
+    },
+    {
+      "did": "200",
+      "dname": "Teetanic",
+      "dimg": "https://lh3.googleusercontent.com/proxy/tadj-esSZ47lUqjF5OXqE5SGgTQhscF3iE-YEXl7dtL83YtqahzSPOinEMeYSYQUkk2w8ezQ85u0OXRHgbVX6F1mTVcMfSTJZEjZvWkZk1pV_G1--qX5WczP6Yi5sijhpHjRMZxfig4YspBMczSk"
+    },
+    {
+      "did": "300",
+      "dname": "Prin",
+      "dimg": "https://lh3.googleusercontent.com/proxy/tadj-esSZ47lUqjF5OXqE5SGgTQhscF3iE-YEXl7dtL83YtqahzSPOinEMeYSYQUkk2w8ezQ85u0OXRHgbVX6F1mTVcMfSTJZEjZvWkZk1pV_G1--qX5WczP6Yi5sijhpHjRMZxfig4YspBMczSk"
+    }
   ]
 }
