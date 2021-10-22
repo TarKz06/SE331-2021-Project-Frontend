@@ -9,6 +9,7 @@ import doctorComment from '../views/detailsPage/doctorComment.vue'
 import NotFound from '../views/NotFound.vue'
 import NetworkError from '../views/NetworkError.vue'
 import NProgress from 'nprogress'
+import Register from '@/views/Register.vue'
 
 const routes = [
   {
@@ -26,6 +27,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
   {
     path: '/about',
