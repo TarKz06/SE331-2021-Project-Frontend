@@ -10,6 +10,9 @@ import NotFound from '../views/NotFound.vue'
 import NetworkError from '../views/NetworkError.vue'
 import NProgress from 'nprogress'
 import VaccineList from '../views/detailsPage/VaccineList.vue'
+import Login from '@/views/LoginForm.vue'
+import Register from '@/views/Register.vue'
+
 const routes = [
   {
     path: '/',
@@ -52,6 +55,16 @@ const routes = [
         component: doctorComment
       }
     ]
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
   {
     path: '/:catchAll(.*)',
