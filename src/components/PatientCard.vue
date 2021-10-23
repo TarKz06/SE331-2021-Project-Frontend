@@ -21,13 +21,9 @@
         </router-link>
         <div v-if="plist.status == '1'">
           Already Inject {{ plist.status }} dose
-          <span class="material-icons-outlined"> medication </span>
         </div>
-        <div v-else>
-          Already Inject {{ plist.status }} dose
-          <span class="material-icons-outlined"> medication </span
-          ><span class="material-icons-outlined"> medication </span>
-        </div>
+        <div v-else-if="plist.status == 'null'">Already Inject 0 dose</div>
+        <div v-else>Already Inject {{ plist.status }} dose</div>
       </div>
     </q-img>
   </q-card>
@@ -55,8 +51,8 @@ a:link {
   text-decoration: none;
   display: inline-block;
 }
-a:visited{
-    color: rgb(70, 70, 70);
+a:visited {
+  color: rgb(70, 70, 70);
 }
 a:active {
   background-color: rgb(246, 241, 231);

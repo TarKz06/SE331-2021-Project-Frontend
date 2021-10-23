@@ -7,15 +7,15 @@
       "gender": "Male",
       "age": "32",
       "location": "Prejmer Romania ",
-      "status": "1",
+      "status": "0",
       "profileimg": "https://data.whicdn.com/images/346071085/original.gif",
       "vaccineDetails": [
         {
-          "vdose": "1",
-          "vname": "Moderna",
-          "vtype": "mRNA-based vaccine",
-          "vdate": "Wednesday 12th of August 2020",
-          "vimg": "https://www.jdrf.org/wp-content/uploads/2020/04/Moderna-Logo-1200x800-1.jpg"
+          "vdose": "",
+          "vname": "",
+          "vtype": "",
+          "vdate": "",
+          "vimg": ""
         },
         {
           "vname": "",
@@ -253,26 +253,6 @@
           "vimg": ""
         }
       ]
-    }
-  ],
-  "doctor": [
-    {
-        "id": 10,
-        "fname": "khematat",
-        "lname": "Supp",
-      "dimg": "https://lh3.googleusercontent.com/proxy/tadj-esSZ47lUqjF5OXqE5SGgTQhscF3iE-YEXl7dtL83YtqahzSPOinEMeYSYQUkk2w8ezQ85u0OXRHgbVX6F1mTVcMfSTJZEjZvWkZk1pV_G1--qX5WczP6Yi5sijhpHjRMZxfig4YspBMczSk"
-    },
-    {
-        "id": 20,
-        "fname": "Salmon",
-        "lname": "isnoun",
-      "dimg": "https://lh3.googleusercontent.com/proxy/tadj-esSZ47lUqjF5OXqE5SGgTQhscF3iE-YEXl7dtL83YtqahzSPOinEMeYSYQUkk2w8ezQ85u0OXRHgbVX6F1mTVcMfSTJZEjZvWkZk1pV_G1--qX5WczP6Yi5sijhpHjRMZxfig4YspBMczSk"
-    },
-    {
-        "id": 30,
-        "fname": "Prinnn",
-        "lname": "P'plook",
-      "dimg": "https://lh3.googleusercontent.com/proxy/tadj-esSZ47lUqjF5OXqE5SGgTQhscF3iE-YEXl7dtL83YtqahzSPOinEMeYSYQUkk2w8ezQ85u0OXRHgbVX6F1mTVcMfSTJZEjZvWkZk1pV_G1--qX5WczP6Yi5sijhpHjRMZxfig4YspBMczSk"
     }
   ]
 }

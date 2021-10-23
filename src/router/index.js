@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PatientList from '../views/PatientList.vue'
 import About from '../views/About.vue'
-
+import Login from '@/views/LoginForm.vue'
 import Layout from '../views/detailsPage/Layout.vue'
 import userInfo from '../views/detailsPage/userInfo.vue'
 import vaccineInfo from '../views/detailsPage/vaccineInfo.vue'
@@ -9,7 +9,8 @@ import doctorComment from '../views/detailsPage/doctorComment.vue'
 import NotFound from '../views/NotFound.vue'
 import NetworkError from '../views/NetworkError.vue'
 import NProgress from 'nprogress'
-import VaccineList from '../views/detailsPage/VaccineList.vue'
+import Register from '@/views/Register.vue'
+
 const routes = [
   {
     path: '/',
@@ -21,6 +22,16 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: () => import('../views/Dashboard.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
   {
     path: '/about',
@@ -68,11 +79,6 @@ const routes = [
     path: '/network-error',
     name: 'NetworkError',
     component: NetworkError
-  },
-  {
-    path: '/vaccinelist',
-    name: 'VaccineList',
-    component: VaccineList
   }
 ]
 
