@@ -8,6 +8,7 @@ import installElementPlus from './plugins/element'
 import 'nprogress/nprogress.css'
 import { Quasar } from 'quasar'
 import quasarUserOptions from './quasar-user-options'
+import './index.css'
 
 const app = createApp(App).use(Quasar, quasarUserOptions)
 installElementPlus(app)
