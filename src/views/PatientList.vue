@@ -11,7 +11,7 @@
         rel="prev"
         v-if="page != 1"
       >
-        <q-btn style="padding:15px"  color="secondary" label="Prev Page" />
+        <q-btn style="padding: 15px" color="secondary" label="Prev Page" />
         <br
       /></router-link>
 
@@ -21,15 +21,12 @@
         rel="next"
         v-if="hasNextPage"
       >
-        <q-btn style="padding:15px" color="secondary" label="Next Page" />
+        <q-btn style="padding: 15px" color="secondary" label="Next Page" />
         <br
       /></router-link>
     </div>
-    <div class="test2">
-        
-    </div>
+    <div class="test2"></div>
   </div>
-  
 </template>
 
 <script>
@@ -108,7 +105,6 @@ export default {
 }
 #page-next {
   text-align: right;
-  
 }
 .test {
   font-family: 'Courier New', monospace;

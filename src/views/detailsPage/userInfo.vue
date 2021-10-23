@@ -6,10 +6,7 @@
 
     <center>
       <div class="row q-gutter-sm">
-
-
-<div class="col-xs-12 col-md-3 col-lg-2">
-</div>
+        <div class="col-xs-12 col-md-3 col-lg-2"></div>
 
         <div class="col-xs-12 col-md-6 col-lg-3">
           <q-card class="card1 my-card shadow-5 bg-secondary">
@@ -29,42 +26,35 @@
             <q-separator color="dark" inset />
 
             <q-card-section>
-              <p class="patientId"><b> Patient ID: {{ plist.id }} </b></p>  
+              <p class="patientId">
+                <b> Patient ID: {{ plist.id }} </b>
+              </p>
             </q-card-section>
           </q-card>
         </div>
 
-      <div class="col-xs-12 col-md-12 col-lg-5">
-          <q-card class="card2 my-card shadow-5 bg-secondary" >
-            <div
-              style="height: 300px; padding-top: 15px"
-            >
-              <p class="bigProfile" style="color: cornsilk;"><b>PROFILE</b></p>
+        <div class="col-xs-12 col-md-12 col-lg-5">
+          <q-card class="card2 my-card shadow-5 bg-secondary">
+            <div style="height: 300px; padding-top: 15px">
+              <p class="bigProfile" style="color: cornsilk"><b>PROFILE</b></p>
               <q-separator color="dark" inset />
-              <p class="profile"> 
-                <b>Name:</b> {{ plist.fname }} <br>
-                <b>Surname:</b> {{ plist.lname }} <br>
-                <b>Age:</b> {{ plist.age }} <br>
-                <b>Gender:</b> {{ plist.gender }} <br>
-                <b>Hometown:</b> {{ plist.location }} <br>
+              <p class="profile">
+                <b>Name:</b> {{ plist.fname }} <br />
+                <b>Surname:</b> {{ plist.lname }} <br />
+                <b>Age:</b> {{ plist.age }} <br />
+                <b>Gender:</b> {{ plist.gender }} <br />
+                <b>Hometown:</b> {{ plist.location }} <br />
               </p>
-                <p class="status">
-                  <b>Dose(s) injected:</b> <br>
-                  <center> {{ plist.status }} </center>
-                </p>
-              
-              
+              <p class="status">
+                <b>Dose(s) injected:</b> <br />
+                <center>{{ plist.status }}</center>
+              </p>
             </div>
-
-
           </q-card>
         </div>
 
-<div class="col-xs-12 col-md-0 col-lg-2">
-</div>
-
+        <div class="col-xs-12 col-md-0 col-lg-2"></div>
       </div>
-
     </center>
   </div>
 </template>
@@ -120,7 +110,7 @@ export default {
 .card1:hover {
   cursor: pointer;
   opacity: 0.5px;
-  transform: scale(1.30);
+  transform: scale(1.3);
   box-shadow: 300px;
 }
 .card2 {
@@ -130,7 +120,7 @@ export default {
 .card2:hover {
   cursor: pointer;
   opacity: 0.5px;
-  transform: scale(1.30);
+  transform: scale(1.3);
   box-shadow: 300px;
 }
 
