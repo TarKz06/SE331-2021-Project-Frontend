@@ -39,11 +39,11 @@
               <p class="bigProfile" style="color: cornsilk"><b>PROFILE</b></p>
               <q-separator color="dark" inset />
               <p class="profile">
-                <b>Name:</b> {{ plist.fname }} <br />
-                <b>Surname:</b> {{ plist.lname }} <br />
+                <b>Name:</b> {{ plist.name }} <br />
+                <b>Surname:</b> {{ plist.surname }} <br />
                 <b>Age:</b> {{ plist.age }} <br />
                 <b>Gender:</b> {{ plist.gender }} <br />
-                <b>Hometown:</b> {{ plist.location }} <br />
+                <b>Hometown:</b> {{ plist.hometown }} <br />
               </p>
               <p class="status">
                 <b>Dose(s) injected:</b> <br />
@@ -60,8 +60,23 @@
 </template>
 
 <script>
+import patientService from '@/services/patientService.js'
 export default {
-  props: ['plist']
+  props: ['id'],
+  data() {
+    return {
+      plist: null
+    }
+  },
+  created() {
+    patientService.getEvent(this.id)
+      .then((response) => {
+        this.event = response.data
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
 }
 </script>
 

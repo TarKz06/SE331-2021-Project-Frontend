@@ -1,23 +1,10 @@
 <template>
-  <!-- <el-row :span="12">
-    <el-col :span="24">
-      <el-card>
-        <img :src="plist.profileimg" />
-        <div style="padding: 14px">
-          <router-link :to="{ name: 'userInfo', params: { id: plist.id } }">
-            <span>{{ plist.fname }}</span>
-            <span>{{ plist.lname }}</span>
-          </router-link>
-        </div>
-      </el-card>
-    </el-col>
-  </el-row> -->
   <q-card class="my-card">
     <q-img :src="plist.profileimg">
       <div class="absolute-bottom text-subtitle2 text-center">
         <router-link :to="{ name: 'userInfo', params: { id: plist.id } }">
-          {{ plist.fname }}
-          {{ plist.lname }}
+          {{ plist.name }}
+          {{ plist.surname }}
         </router-link>
         <div v-if="plist.status == '1'">
           Already Inject {{ plist.status }} dose

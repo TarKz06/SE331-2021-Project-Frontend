@@ -1,20 +1,28 @@
-import axios from 'axios'
-
-const apiClient = axios.create({
-  baseURL: 'http://localhost:3004',
-  withCredentials: false,
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json'
-  }
-})
+import apiClient from '@/services/AxiosClient.js'
 
 export default {
   getEvents(perPage, page) {
-    return apiClient.get('/plist?_limit=' + perPage + '&_page=' + page)
+    return apiClient.get('/plists?_limit=' + perPage + '&_page=' + page)
   },
   //Add new call
   getEvent(id) {
-    return apiClient.get('/plist/' + id)
+    return apiClient.get('/plists/' + id)
+  },
+  saveEvent(plist) {
+    return apiClient.post('/plists', plist)
+  },
+  getEventByKeyword(keyword, perPage, page) {
+    return apiClient.get(
+      'plists?_limit=' + perPage + '&_page=' + page + '&title=' + keyword
+    )
+  },
+  uploadFile(file) {
+    let formData = new FormData()
+    formData.append('file', file)
+    return apiClient.post('/uploadFile', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
   }
 }
