@@ -34,6 +34,19 @@
         KEEMO-NUMBA-ONE
       </router-link>
     </el-menu-item>
+      <el-menu-item index="3">
+      <router-link
+        style="
+          color: black;
+          font-family: 'Courier New', monospace;
+          font-size: 20px;
+          font-weight: bold;
+        "
+        :to="{ name: 'VaccineList' }"
+      >
+        Vaccine-List
+      </router-link>
+    </el-menu-item>
   </el-menu>
 </template>
 <script>

@@ -10,7 +10,9 @@ import NotFound from '../views/NotFound.vue'
 import NetworkError from '../views/NetworkError.vue'
 import NProgress from 'nprogress'
 import Register from '@/views/Register.vue'
+import VaccineList from '../views/VaccineList.vue'
 
+VaccineList
 const routes = [
   {
     path: '/',
@@ -79,6 +81,11 @@ const routes = [
     path: '/network-error',
     name: 'NetworkError',
     component: NetworkError
+  },
+  {
+    path: '/vaccinelist',
+    name: 'VaccineList',
+    component: VaccineList
   }
 ]
 
