@@ -71,7 +71,7 @@ export default {
   created() {
     patientService.getEvent(this.id)
       .then((response) => {
-        this.event = response.data
+        this.plist = response.data
       })
       .catch((error) => {
         console.log(error)
