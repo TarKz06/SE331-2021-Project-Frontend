@@ -1,43 +1,66 @@
 @@ -0,0 +1,98 @@
 <template>
-  <div class="col-md-12">
-    <div class="card card-container">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
-      <Form @submit="handleLogin" :validation-schema="schema">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <Field name="username" type="text" class="form-control" />
-          <ErrorMessage name="username" class="error-feedback" />
-        </div>
+  <main>
+    <ul id="cards">
+      <li class="card" id="card_1">
+        <div class="card__content">
+          <div>
+            <div class="col-md-12">
+              <div class="card card-container">
+                <img
+                  id="profile-img"
+                  src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                  class="profile-img-card"
+                />
+                <Form @submit="handleLogin" :validation-schema="schema">
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <Field name="username" type="text" class="form-control" />
+                    <ErrorMessage name="username" class="error-feedback" />
+                  </div>
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <Field name="password" type="password" class="form-control" />
-          <ErrorMessage name="password" class="error-feedback" />
-        </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <Field
+                      name="password"
+                      type="password"
+                      class="form-control"
+                    />
+                    <ErrorMessage name="password" class="error-feedback" />
+                  </div>
 
-        <div class="form-group">
-          <button class="btn btn-primary btn-block" :disabled="loading">
-            <span
-              v-show="loading"
-              class="spinner-border spinner-border-sm"
-            ></span>
-            <span>Login</span>
-          </button>
-        </div>
+                  <div class="form-group">
+                    <button
+                      class="btn btn-primary btn-block"
+                      :disabled="loading"
+                    >
+                      <span
+                        v-show="loading"
+                        class="spinner-border spinner-border-sm"
+                      ></span>
+                      <span>Login</span>
+                    </button>
+                  </div>
 
-        <div class="form-group">
-          <div v-if="message" class="alert alert-danger" role="alert">
-            {{ message }}
+                  <div class="form-group">
+                    <div v-if="message" class="alert alert-danger" role="alert">
+                      {{ message }}
+                    </div>
+                  </div>
+                </Form>
+              </div>
+            </div>
           </div>
+          <figure>
+            <img
+              src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-1.jpg"
+              alt="Image description"
+            />
+          </figure>
         </div>
-      </Form>
-    </div>
-  </div>
+      </li>
+    </ul>
+  </main>
 </template>
 
 <script>
@@ -80,6 +103,9 @@ export default {
 </script>
 
 <style scoped>
+.test {
+  background-color: aqua;
+}
 label {
   display: block;
   margin-top: 10px;
@@ -109,5 +135,80 @@ label {
 }
 .error-feedback {
   color: red;
+}
+.card {
+  border: 10px;
+  border-radius: 20px;
+  
+}
+
+.card {
+  padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+header,
+main {
+  width: 78vw;
+  margin: 0 auto;
+}
+
+
+
+.card__content {
+  box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+  background: rgb(255, 255, 255);
+  color: rgb(10, 5, 7);
+  border-radius: 1em;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-areas: 'text img';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+  align-items: stretch;
+  outline: var(--outline-width) solid lime;
+}
+
+.card__content > div {
+  grid-area: text;
+  width: 80%;
+  place-self: center;
+  text-align: left;
+
+  display: grid;
+  gap: 1em;
+  place-items: start;
+}
+
+.card__content > figure {
+  grid-area: img;
+  overflow: hidden;
+}
+
+.card__content > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 3.5em;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 2.5em;
+}
+
+p {
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 1.42;
+}
+
+.btn {
+  margin: 10px;
 }
 </style>
