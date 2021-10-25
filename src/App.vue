@@ -23,7 +23,7 @@
           <li class="nav-item">
             <router-link to="/profile" class="nav-link">
               <font-awesome-icon icon="user" />
-              {{ GStore.currentUser.name }}
+              {{ GStore.currentUser.firstname }}
             </router-link>
           </li>
           <li class="nav-item">

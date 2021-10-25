@@ -1,5 +1,5 @@
 <template>
-  <div v-if="plist">
+  <div v-if="GStore.plist">
     <div id="nav">
       <router-link :to="{ name: 'userInfo', params: { id } }">
         <q-btn
@@ -25,7 +25,7 @@
         />
       </router-link>
     </div>
-    <router-view :plist="plist" />
+    <router-view :plist="GStore.plist" />
   </div>
 </template>
 
@@ -33,6 +33,7 @@
 import patientService from '@/services/patientService.js'
 
 export default {
+  inject: ['GStore'],
   props: ['id'],
   data() {
     return {

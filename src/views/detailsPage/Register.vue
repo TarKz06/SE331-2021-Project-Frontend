@@ -11,7 +11,7 @@ export default {
     register() {
       // Assuming successful API call to register them
       this.GStore.flashMessage =
-        'You are successfully registered for ' + this.patient.name
+        'You are successfully registered for ' + this.patient.firstname
       setTimeout(() => {
         // After 3 seconds remove it
         this.GStore.flashMessage = ''

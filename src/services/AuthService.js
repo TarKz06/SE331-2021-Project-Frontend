@@ -45,7 +45,6 @@ export default {
     return apiClient
       .post('/auth/User', {
         username: user.username,
-        email: user.email,
         password: user.password,
         firstname: user.firstname,
         lastname: user.lastname,

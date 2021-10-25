@@ -18,11 +18,6 @@
             <Field name="password" type="password" class="form-control" />
             <ErrorMessage name="password" class="error-feedback" />
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <Field name="email" type="email" class="form-control" />
-            <ErrorMessage name="email" class="error-feedback" />
-          </div>
 
           <div class="form-group">
             <label for="firstname">Firstname</label>
@@ -100,11 +95,6 @@ export default {
         .required('Firstname is required!')
         .min(3, 'Must be at least 3 characters!')
         .max(20, 'Must be maximum 20 characters!'),
-      email: yup
-        .string()
-        .required('Email is required!')
-        .email('Email is invalid!')
-        .max(50, 'Must be maximum 50 characters!'),
       password: yup
         .string()
         .required('Password is required!')
@@ -141,7 +131,7 @@ export default {
   },
   mounted() {
     if (this.GStore.currentUser) {
-      this.$router.push('/plists')
+      this.$router.push('/plist')
     }
   },
   methods: {
@@ -149,7 +139,7 @@ export default {
     handleRegister(user) {
       AuthService.registerUser(user)
         .then(() => {
-          this.$router.push({ name: 'Login' })
+          this.$router.push({ name:'Login'})
         })
         .catch(() => {
           this.message = 'could not register'

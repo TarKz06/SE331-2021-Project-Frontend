@@ -1,7 +1,7 @@
 import { reactive } from 'vue'
 export default reactive({
   flashMessage: '',
-  patient: null,
+  plist: null,
   doctors: null,
   currentUser: JSON.parse(localStorage.getItem('user'))
 })

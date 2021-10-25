@@ -3,8 +3,8 @@
     <q-img :src="plist.profileimg">
       <div class="absolute-bottom text-subtitle2 text-center">
         <router-link :to="{ name: 'userInfo', params: { id: plist.id } }">
-          {{ plist.name }}
-          {{ plist.surname }}
+          {{ plist.firstname }}
+          {{ plist.lastname }}
         </router-link>
         <div v-if="plist.status == '1'">
           Already Inject {{ plist.status }} dose

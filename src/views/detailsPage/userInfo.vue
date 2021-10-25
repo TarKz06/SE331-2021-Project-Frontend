@@ -17,7 +17,7 @@
               <q-item>
                 <q-item-section avatar>
                   <q-avatar size="250px">
-                    <img :src="plist.profileimg" />
+                    <img :src="plist.imageUrl" />
                   </q-avatar>
                 </q-item-section>
               </q-item>
@@ -39,8 +39,8 @@
               <p class="bigProfile" style="color: cornsilk"><b>PROFILE</b></p>
               <q-separator color="dark" inset />
               <p class="profile">
-                <b>Name:</b> {{ plist.name }} <br />
-                <b>Surname:</b> {{ plist.surname }} <br />
+                <b>Name:</b> {{ plist.firstname }} <br />
+                <b>Surname:</b> {{ plist.lastname }} <br />
                 <b>Age:</b> {{ plist.age }} <br />
                 <b>Gender:</b> {{ plist.gender }} <br />
                 <b>Hometown:</b> {{ plist.hometown }} <br />
