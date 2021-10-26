@@ -102,7 +102,7 @@ export default {
       queryFunction
         .then((response) => {
           this.plists = response.data
-          console.log(this.events)
+          console.log(this.plists)
           this.totalPlists = response.headers['x-total-count']
           console.log(this.totalPlists)
         })
