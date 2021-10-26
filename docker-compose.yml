@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+    web:
+        image: "khematat01/finalproject:latest"
+        ports: 
+            - 8001:80
+    
