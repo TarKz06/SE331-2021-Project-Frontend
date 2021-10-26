@@ -158,7 +158,7 @@ export default {
     handleRegister(user) {
       AuthService.registerUser(user)
         .then(() => {
-          this.$router.push({ name: 'Login' })
+          this.$router.push({ name: 'User' })
         })
         .catch(() => {
           this.message = 'could not register'
