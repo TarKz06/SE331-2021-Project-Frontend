@@ -3,20 +3,31 @@
     <q-markup-table>
       <thead>
         <tr>
-          <th class="text-left">Admin</th>
-          <th class="text-right">First Name</th>
-          <th class="text-right">Last Name</th>
-          <th class="text-right">Gender</th>
-          <th class="text-right">Hometown</th>
+          <th class="text-left">ID</th>
+          <th class="text-center">First Name</th>
+          <th class="text-center">Last Name</th>
+          <th class="text-center">Gender</th>
+          <th class="text-center">Hometown</th>
+          <th class="text">Profile</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-            <td class="text-right"></td>
-          <td class="text-right">{{ users.firstname }}</td>
-          <td class="text-right">{{ users.lastname }}</td>
-          <td class="text-right">{{ users.gender }}</td>
-          <td class="text-right">{{ users.hometown }}</td>
+          <td class="text-left">{{ users.id }}</td>
+          <td class="text-center">{{ users.firstname }}</td>
+          <td class="text-center">{{ users.lastname }}</td>
+          <td class="text-center">{{ users.gender }}</td>
+          <td class="text-center">{{ users.hometown }}</td>
+          <th class="text-center">
+            <router-link :to="{ name: 'userInfo', params: { id: users.id } }">
+              <q-btn push color="primary">
+                <img
+                  class="icon"
+                  src="https://cdn-icons.flaticon.com/png/512/1481/premium/1481160.png?token=exp=1635275321~hmac=c023bed76d615bdc1859c971339c97dd"
+                />
+              </q-btn>
+            </router-link>
+          </th>
         </tr>
       </tbody>
     </q-markup-table>
@@ -50,5 +61,19 @@ a:visited {
 }
 a:active {
   background-color: rgb(246, 241, 231);
+}
+
+.text-center {
+  width: 170px;
+}
+thead {
+  background-color: #ffc107;
+}
+.q-btn {
+  text-align: center;
+}
+.icon {
+  width: 15px;
+  height: 20px;
 }
 </style>

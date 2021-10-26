@@ -55,7 +55,7 @@ export default {
   // eslint-disable-next-line no-unused-vars
   beforeRouteEnter(routeTo, routeFrom, next) {
     UserService
-      .getEvents(5, parseInt(routeTo.query.page) || 1)
+      .getEvents(10, parseInt(routeTo.query.page) || 1)
       .then((response) => {
         next((comp) => {
           comp.userss = response.data
@@ -70,13 +70,13 @@ export default {
     var queryFunction
     if (this.keyword == null || this.keyword === '') {
       queryFunction = UserService.getEvents(
-        5,
+        10,
         parseInt(routeTo.query.page) || 1
       )
     } else {
       queryFunction = UserService.getEventByKeyword(
         this.keyword,
-        5,
+        10,
         parseInt(routeTo.query.page) || 1
       )
     }
