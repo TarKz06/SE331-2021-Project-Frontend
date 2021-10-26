@@ -1,18 +1,74 @@
-<script>
-import Navbar from './components/Navbar.vue'
-import Footer from './components/Footer.vue'
-
-export default {
-  components: { Navbar, Footer }
-}
-</script>
 <template>
   <Navbar />
   <q-layout view="lHh Lpr lFf">
+    <div id="flashMessage" v-if="GStore.flashMessage">
+      {{ GStore.flashMessage }}
+    </div>
+    <div id="nav">
+      <nav class="navbar navbar-expand">
+        <ul v-if="!GStore.currentUser" class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <router-link to="/register" class="nav-link">
+              <font-awesome-icon icon="user-plus" /> Sign Up
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/login" class="nav-link">
+              <font-awesome-icon icon="sign-in-alt" /> Login
+            </router-link>
+          </li>
+        </ul>
+
+        <ul v-if="GStore.currentUser" class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <router-link to="/profile" class="nav-link">
+              <font-awesome-icon icon="user" />
+              {{ GStore.currentUser.firstname }}
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" @click="logout">
+              <font-awesome-icon icon="sign-out-alt" /> LogOut
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- new element -->
     <router-view />
-    <Footer/>
+    <Footer />
   </q-layout>
 </template>
+
+<script>
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
+import AuthService from '@/services/AuthService.js'
+
+export default {
+  inject: ['GStore'],
+  components: {
+    Navbar,
+    Footer
+  },
+  computed: {
+    currentUser() {
+      console.log(localStorage.getItem('user'))
+      return localStorage.getItem('user')
+    },
+    isAdmin() {
+      return AuthService.hasRoles('ROLE_ADMIN')
+    }
+  },
+  methods: {
+    logout() {
+      AuthService.logout()
+      this.$router.go()
+    }
+  }
+}
+</script>
 
 <style>
 #app {

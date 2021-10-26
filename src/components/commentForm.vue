@@ -1,25 +1,36 @@
 <template>
-<div class="comment">
-  <div class="q-pa-md">
-    <center>
-    <div class="q-gutter-y-md column" style="max-width: 500px" >
-      <form class="review-form" @submit.prevent="onSubmit">
-        <q-input
-        label="Add a comment..."
-            v-model="comment"
-            filled
-            type="textarea"
-            id="comment"
-        />
-        <br>
-        <q-input filled v-model="name" label="Name :" :dense="dense" id="name"/>
-        
-          <br>
-        <q-btn class="input" type="submit" label="Submit" color="secondary" />
-      </form>
+  <div class="comment">
+    <div class="q-pa-md">
+      <center>
+        <div class="q-gutter-y-md column" style="max-width: 500px">
+          <form class="review-form" @submit.prevent="onSubmit">
+            <q-input
+              label="Add a comment..."
+              v-model="comment"
+              filled
+              type="textarea"
+              id="comment"
+            />
+            <br />
+            <q-input
+              filled
+              v-model="name"
+              label="Name :"
+              :dense="dense"
+              id="name"
+            />
+
+            <br />
+            <q-btn
+              class="input"
+              type="submit"
+              label="Submit"
+              color="secondary"
+            />
+          </form>
+        </div>
+      </center>
     </div>
-    </center>
-  </div>
   </div>
   <q-separator />
 </template>
@@ -51,5 +62,6 @@ export default {
 }
 </script>
 <style>
-.comment{}
+.comment {
+}
 </style>

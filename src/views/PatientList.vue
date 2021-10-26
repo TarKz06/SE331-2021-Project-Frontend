@@ -11,7 +11,7 @@
         rel="prev"
         v-if="page != 1"
       >
-        <q-btn style="padding:15px"  color="secondary" label="Prev Page" />
+        <q-btn style="padding: 15px" color="secondary" label="Prev Page" />
         <br
       /></router-link>
 
@@ -21,15 +21,12 @@
         rel="next"
         v-if="hasNextPage"
       >
-        <q-btn style="padding:15px" color="secondary" label="Next Page" />
+        <q-btn style="padding: 15px" color="secondary" label="Next Page" />
         <br
       /></router-link>
     </div>
-    <div class="test2">
-        
-    </div>
+    <div class="test2"></div>
   </div>
-  
 </template>
 
 <script>
@@ -51,7 +48,8 @@ export default {
   data() {
     return {
       plists: null,
-      totalPlist: 0
+      totalPlists: 0,
+      keyword: null
     }
   },
   // eslint-disable-next-line no-unused-vars
@@ -61,28 +59,61 @@ export default {
       .then((response) => {
         next((comp) => {
           comp.plists = response.data
-          comp.totalPlist = response.headers['x-total-count'] // <--- Store it
+          comp.totalPlists = response.headers['x-total-count'] // <--- Store it
         })
       })
       .catch(() => {
         next({ name: 'NetworkError' })
       })
   },
-  beforeRouteUpdate(routeTo, routeFrom, next) {
-    patientService
-      .getEvents(5, parseInt(routeTo.query.page) || 1)
+  beforeRouteUpdate(routeTo) {
+    var queryFunction
+    if (this.keyword == null || this.keyword === '') {
+      queryFunction = patientService.getEvents(
+        5,
+        parseInt(routeTo.query.page) || 1
+      )
+    } else {
+      queryFunction = patientService.getEventByKeyword(
+        this.keyword,
+        5,
+        parseInt(routeTo.query.page) || 1
+      )
+    }
+      
+    queryFunction
       .then((response) => {
         this.plists = response.data
-        this.totalPlist = response.headers['x-total-count'] // <--- Store it
-        next()
+        this.totalPlists = response.headers['x-total-count']
       })
       .catch(() => {
-        next({ name: 'NetworkError' })
+        return{ name: 'NetworkError' }
       })
+  },
+  methods: {
+    updateKeyword() {
+      var queryFunction
+      if (this.keyword === '') {
+        queryFunction = patientService.getEvents(5, 1)
+      } else {
+        queryFunction = patientService.getEventByKeyword(this.keyword, 5, 1)
+      }
+
+      queryFunction
+        .then((response) => {
+          this.plists = response.data
+          console.log(this.events)
+          this.totalPlists = response.headers['x-total-count']
+          console.log(this.totalPlists)
+        })
+        .catch(() => {
+          return { name: 'NetworkError' }
+        })
+    }
   },
   computed: {
     hasNextPage() {
-      let totalPages = Math.ceil(this.totalPlist / 5)
+      let totalPages = Math.ceil(this.totalPlists / 5)
       return this.page < totalPages
     }
   }
@@ -108,7 +139,6 @@ export default {
 }
 #page-next {
   text-align: right;
-  
 }
 .test {
   font-family: 'Courier New', monospace;

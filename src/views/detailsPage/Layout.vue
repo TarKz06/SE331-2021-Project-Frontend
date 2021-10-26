@@ -1,7 +1,7 @@
 <template>
-  <div v-if="plist">
+  <div v-if="GStore.plist">
     <div id="nav">
-      <router-link :to="{ name: 'userInfo', params: { id } }">
+      <router-link :to="{ name: 'userInfo'}">
         <q-btn
           style="background: goldenrod; color: white"
           glossy
@@ -9,7 +9,7 @@
         />
       </router-link>
       |
-      <router-link :to="{ name: 'vaccineInfo', params: { id } }">
+      <router-link :to="{ name: 'vaccineInfo'}">
         <q-btn
           style="background: goldenrod; color: white"
           glossy
@@ -17,7 +17,7 @@
         />
       </router-link>
       |
-      <router-link :to="{ name: 'doctorComment', params: { id } }">
+      <router-link :to="{ name: 'doctorComment'}">
         <q-btn
           style="background: goldenrod; color: white"
           glossy
@@ -25,36 +25,12 @@
         />
       </router-link>
     </div>
-    <router-view :plist="plist" />
+    <router-view :plist="GStore.plist" />
   </div>
 </template>
 
 <script>
-import patientService from '@/services/patientService.js'
-
 export default {
-  props: ['id'],
-  data() {
-    return {
-      plist: null
-    }
-  },
-  created() {
-    patientService
-      .getEvent(this.id)
-      .then((response) => {
-        this.plist = response.data
-      })
-      .catch((error) => {
-        if (error.response && error.response.status == 404) {
-          this.$router.push({
-            name: '404Resource',
-            params: { resource: 'plist' }
-          })
-        } else {
-          this.$router.push({ name: 'NetworkError' })
-        }
-      })
-  }
+  inject: ['GStore']
 }
 </script>

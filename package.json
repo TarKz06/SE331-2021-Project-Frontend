@@ -9,15 +9,23 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "@quasar/extras": "^1.0.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
+    "bootstrap": "^4.6.0",
     "core-js": "^3.6.5",
     "element-plus": "^1.0.2-beta.70",
+    "jquery": "^3.6.0",
     "nprogress": "^0.2.0",
+    "popper.js": "^1.16.1",
     "quasar": "^2.0.0",
+    "vee-validate": "^4.5.4",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
+    "vuex": "^4.0.0-0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

@@ -7,7 +7,7 @@
     <div class="row justify-center q-gutter-sm">
       <q-card class="my-card">
         <img
-          src="https://scontent.fcnx3-1.fna.fbcdn.net/v/t1.6435-9/80650660_1513612772127181_2329682882320138240_n.jpg?_nc_cat=106&ccb=1-4&_nc_sid=09cbfe&_nc_ohc=x1New6yJXkYAX_1Zyjr&_nc_ht=scontent.fcnx3-1.fna&oh=1c11f1b67130a8bc462ed2f3d31b0524&oe=613CCBA3"
+          src="https://scontent.fcnx3-1.fna.fbcdn.net/v/t1.6435-9/80650660_1513612772127181_2329682882320138240_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Q9fA4ReIxq4AX-MBqsn&_nc_ht=scontent.fcnx3-1.fna&oh=4aad552dcc74681ac0c4387f214f42f1&oe=619BB7A3"
         />
 
         <q-card-section>
@@ -109,7 +109,7 @@
 
       <q-card class="my-card">
         <img
-          src="https://scontent.fcnx3-1.fna.fbcdn.net/v/t1.6435-9/78640316_957949701240148_6753999883012669440_n.jpg?_nc_cat=101&ccb=1-4&_nc_sid=174925&_nc_ohc=1hsIRQS-4aMAX-ReWXn&_nc_ht=scontent.fcnx3-1.fna&oh=2eb9d615a23e4d7d8efa218e4f434082&oe=613BDB3F"
+          src="https://scontent.fcnx3-1.fna.fbcdn.net/v/t1.6435-9/67478494_850946951940424_5237861004297109504_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=VYx5fOG_1usAX-XlM1a&_nc_ht=scontent.fcnx3-1.fna&oh=9709779443c3fb272d55ad372fcd37c6&oe=619ECD48"
         />
 
         <q-card-section>
