@@ -4,15 +4,15 @@
     class="el-menu-demo"
     mode="horizontal"
     @select="handleSelect"
-    background-color="#D9B3AB"
+    background-color="#006abc"
     text-color="#fff"
     active-text-color="#ffd04b"
   >
     <el-menu-item index="0">
       <router-link
         style="
-          color: black;
-          font-family: 'Courier New', monospace;
+          color: #4d47c;
+          font-family: 'Source Sans Pro', sans-serif;
           font-size: 20px;
           font-weight: bold;
         "
@@ -24,8 +24,8 @@
     <el-menu-item index="1">
       <router-link
         style="
-          color: black;
-          font-family: 'Courier New', monospace;
+          color: #4d47c;
+          font-family: 'Source Sans Pro', sans-serif;
           font-size: 20px;
           font-weight: bold;
         "
@@ -37,6 +37,7 @@
   </el-menu>
 </template>
 <script>
+
 export default {
   name: 'Navbar',
   props: {
@@ -47,4 +48,6 @@ export default {
   }
 }
 </script>
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+
+</style>

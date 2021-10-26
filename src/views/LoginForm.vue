@@ -1,5 +1,6 @@
 @@ -0,0 +1,98 @@
 <template>
+  <h1 style="margin-left: 28px">Login Page</h1>
   <main>
     <ul id="cards">
       <li class="card" id="card_1">
@@ -9,7 +10,7 @@
               <div class="card card-container">
                 <img
                   id="profile-img"
-                  src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                  src="@/assets/images/kemo.gif"
                   class="profile-img-card"
                 />
                 <Form @submit="handleLogin" :validation-schema="schema">
@@ -52,10 +53,7 @@
             </div>
           </div>
           <figure>
-            <img
-              src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-1.jpg"
-              alt="Image description"
-            />
+            <img src="@/assets/images/img-1.jpg" alt="Image description" />
           </figure>
         </div>
       </li>
@@ -125,8 +123,8 @@ label {
   -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 .profile-img-card {
-  width: 96px;
-  height: 96px;
+  width: 100px;
+  height: 100px;
   margin: 0 auto 10px;
   display: block;
   -moz-border-radius: 50%;
@@ -139,7 +137,6 @@ label {
 .card {
   border: 10px;
   border-radius: 20px;
-  
 }
 
 .card {
