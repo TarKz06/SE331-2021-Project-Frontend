@@ -1,16 +1,26 @@
 <template>
-  <q-card class="my-card">
-    <q-img :src="users.profileimg">
-      <div class="absolute-bottom text-subtitle2 text-center">
-        <router-link :to="{ name: 'userInfo', params: { id: users.id } }">
-          {{ users.firstname }}
-          {{ users.lastname }}
-        </router-link>
-        <h2>gender : {{users.gender}}</h2>
-        <h2>howtown : {{users.hometown}}</h2>
-      </div>
-    </q-img>
-  </q-card>
+  <div class="q-pa-md">
+    <q-markup-table>
+      <thead>
+        <tr>
+          <th class="text-left">Admin</th>
+          <th class="text-right">First Name</th>
+          <th class="text-right">Last Name</th>
+          <th class="text-right">Gender</th>
+          <th class="text-right">Hometown</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td class="text-right"></td>
+          <td class="text-right">{{ users.firstname }}</td>
+          <td class="text-right">{{ users.lastname }}</td>
+          <td class="text-right">{{ users.gender }}</td>
+          <td class="text-right">{{ users.hometown }}</td>
+        </tr>
+      </tbody>
+    </q-markup-table>
+  </div>
 </template>
 
 <script>

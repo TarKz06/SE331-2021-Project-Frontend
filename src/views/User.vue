@@ -1,6 +1,6 @@
 <template>
   <h1 class="text">User List</h1>
-  <q-page-container class="flex flex-center q-pa-md row q-gutter-lg">
+  <q-page-container class="flex flex-center q-pa-md column q-gutter-lg">
     <UserCard v-for="users in userss" :key="users.id" :users="users" />
   </q-page-container>
   <div class="users">
@@ -35,7 +35,7 @@ import UserCard from '@/components/UserCard.vue'
 import UserService from '@/services/UserService.js'
 
 export default {
-  name: 'User',
+  name: '',
   props: {
     page: {
       type: Number,
@@ -55,7 +55,7 @@ export default {
   // eslint-disable-next-line no-unused-vars
   beforeRouteEnter(routeTo, routeFrom, next) {
     UserService
-      .getEvents(10, parseInt(routeTo.query.page) || 1)
+      .getEvents(5, parseInt(routeTo.query.page) || 1)
       .then((response) => {
         next((comp) => {
           comp.userss = response.data
