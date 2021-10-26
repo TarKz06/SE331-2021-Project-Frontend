@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <h3 class="h3"><b>About us</b></h3>
-    <h4>Keemo Number One</h4>
+    <h4 class="h4">Keemo Number One</h4>
   </div>
   <div class="q-pa-md row items-start q-gutter-md">
     <div class="row justify-center q-gutter-sm">
@@ -165,5 +165,9 @@
 }
 .h3 {
   font-size: 24;
+  color: white;
+}
+.h4 {
+  color: rgb(104, 104, 104);
 }
 </style>

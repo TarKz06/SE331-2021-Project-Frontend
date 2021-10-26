@@ -9,6 +9,7 @@
           <th class="text-center">Gender</th>
           <th class="text-center">Hometown</th>
           <th class="text">Profile</th>
+          <th class="text">Change Role</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +29,27 @@
               </q-btn>
             </router-link>
           </th>
+          <td class="text-center">
+            <div class="q-pa-md">
+              <q-btn-dropdown color="primary" label="Select Role">
+                <q-list>
+                  <q-item clickable v-close-popup @click="onItemClick">
+                    <q-item-section>
+                      <q-item-label>Doctor</q-item-label>
+                    </q-item-section>
+                  </q-item>
+
+                  <q-item clickable v-close-popup @click="onItemClick">
+                    <q-item-section>
+                      <q-item-label>
+                          Patient
+                      </q-item-label>
+                    </q-item-section>
+                  </q-item>
+                </q-list>
+              </q-btn-dropdown>
+            </div>
+          </td>
         </tr>
       </tbody>
     </q-markup-table>
@@ -35,12 +57,20 @@
 </template>
 
 <script>
+
 export default {
   name: 'UserCard',
   props: {
     users: {
       type: Object,
       required: true
+    }
+  },
+  setup () {
+    return {
+      onItemClick () {
+         console.log('Clicked on an Item')
+      }
     }
   }
 }

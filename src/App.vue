@@ -1,44 +1,51 @@
 <template>
-  <Navbar />
-  <q-layout view="lHh Lpr lFf">
-    <div id="flashMessage" v-if="GStore.flashMessage">
-      {{ GStore.flashMessage }}
-    </div>
-    <div id="nav">
-      <nav class="navbar navbar-expand">
-        <ul v-if="!GStore.currentUser" class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <router-link to="/register" class="nav-link">
-              <font-awesome-icon icon="user-plus" /> Sign Up
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/login" class="nav-link">
-              <font-awesome-icon icon="sign-in-alt" /> Login
-            </router-link>
-          </li>
-        </ul>
+  <div
+    :style="{
+      'background-image':
+        'url(https://images3.alphacoders.com/101/thumb-1920-1010294.jpg)'
+    }"
+  >
+    <Navbar />
+    <q-layout view="lHh Lpr lFf">
+      <div id="flashMessage" v-if="GStore.flashMessage">
+        {{ GStore.flashMessage }}
+      </div>
+      <div id="nav">
+        <nav class="navbar navbar-expand">
+          <ul v-if="!GStore.currentUser" class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <router-link to="/register" class="nav-link">
+                <font-awesome-icon icon="user-plus" /> Sign Up
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/login" class="nav-link">
+                <font-awesome-icon icon="sign-in-alt" /> Login
+              </router-link>
+            </li>
+          </ul>
 
-        <ul v-if="GStore.currentUser" class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <router-link to="/profile" class="nav-link">
-              <font-awesome-icon icon="user" />
-              {{ GStore.currentUser.firstname }}
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" @click="logout">
-              <font-awesome-icon icon="sign-out-alt" /> LogOut
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+          <ul v-if="GStore.currentUser" class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <router-link to="/profile" class="nav-link">
+                <font-awesome-icon icon="user" />
+                {{ GStore.currentUser.firstname }}
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" @click="logout">
+                <font-awesome-icon icon="sign-out-alt" /> LogOut
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-    <!-- new element -->
-    <router-view />
-    <Footer />
-  </q-layout>
+      <!-- new element -->
+      <router-view />
+      <Footer />
+    </q-layout>
+  </div>
 </template>
 
 <script>
@@ -81,7 +88,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  background-color: #e2e7f0;
+  background-image: 'https://images3.alphacoders.com/101/thumb-1920-1010294.jpg';
 }
 #nav {
   padding: 30px;

@@ -11,6 +11,12 @@ export default {
   saveEvent(users) {
     return apiClient.post('/users', users)
   },
+  getDoctor(id) {
+    return apiClient.get('/set-role/' + id + '/doctors')
+  },
+  getPatient(id) {
+    return apiClient.get('/set-role/' + id + '/plists')
+  },
   getEventByKeyword(keyword, perPage, page) {
     return apiClient.get(
       'users?_limit=' + perPage + '&_page=' + page + '&title=' + keyword

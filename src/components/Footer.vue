@@ -14,7 +14,7 @@ export default {
 </script>
 <style>
 .cp-text {
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(238, 228, 228, 0.7);
   text-shadow: 0 1px rgba(255, 255, 255, 0.1);
   font-size: 15px;
 }

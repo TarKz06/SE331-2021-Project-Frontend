@@ -1,7 +1,10 @@
 <template>
+<div class="Text">
 <h1>Vaccine List</h1>
+
   <br>
   <h4>Available vaccine.</h4>
+  </div>
   <div class="q-pa-md">
     <q-carousel swipeable animated v-model="slide" thumbnails infinite>
       <q-carousel-slide
@@ -35,3 +38,8 @@ export default {
   }
 }
 </script>
+<style>
+.Text{
+    color: rgba(21, 21, 20, 0.39);
+}
+</style>
