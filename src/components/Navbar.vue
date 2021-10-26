@@ -1,5 +1,4 @@
 <template>
-
   <el-menu
     :default-active="activeIndex2"
     class="el-menu-demo"
@@ -35,8 +34,8 @@
         KEEMO-NUMBA-ONE
       </router-link>
     </el-menu-item>
- 
-   <el-menu-item index="2">
+
+    <el-menu-item index="2">
       <router-link
         style="
           color: #4d47c;
@@ -49,9 +48,23 @@
         VACCINE-LIST
       </router-link>
     </el-menu-item>
-    </el-menu>
-</template> 
+    <el-menu-item v-if="isAdmin" index="3">
+      <router-link
+        style="
+          color: #4d47c;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 20px;
+          font-weight: bold;
+        "
+        :to="{ name: 'User' }"
+      >
+        USER-LIST
+      </router-link>
+    </el-menu-item>
+  </el-menu>
+</template>
 <script>
+import AuthService from '@/services/AuthService.js'
 
 export default {
   name: 'Navbar',
@@ -60,9 +73,12 @@ export default {
       type: Object,
       required: true
     }
+  },
+  computed: {
+    isAdmin() {
+      return AuthService.hasRoles('ROLE_ADMIN')
+    }
   }
 }
 </script>
-<style lang="postcss" scoped>
-
-</style>
+<style lang="postcss" scoped></style>

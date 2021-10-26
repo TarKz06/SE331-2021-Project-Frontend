@@ -140,8 +140,10 @@ export default {
 #page-next {
   text-align: right;
 }
-.test {
+.text {
   font-family: 'Courier New', monospace;
+  font-size: 70px;
+  
 }
 .test2 {
   font-family: 'Courier New', monospace;
