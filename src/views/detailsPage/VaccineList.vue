@@ -1,4 +1,5 @@
 <template>
+<h1>Vaccine List</h1>
   <div class="q-pa-md">
     <q-carousel swipeable animated v-model="slide" thumbnails infinite>
       <q-carousel-slide
