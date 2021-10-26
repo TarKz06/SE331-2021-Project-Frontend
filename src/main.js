@@ -11,6 +11,7 @@ import quasarUserOptions from './quasar-user-options'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { FontAwesomeIcon } from './plugins/font-awesome'
+import '@/services/AxiosIntercepterSetup.js'
 
 const app = createApp(App).use(Quasar, quasarUserOptions)
 installElementPlus(app)

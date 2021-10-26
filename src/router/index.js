@@ -12,6 +12,7 @@ import NProgress from 'nprogress'
 import patientService from '@/services/patientService.js'
 import GStore from '@/store'
 import VaccineList from '../views/detailsPage/VaccineList.vue'
+import User from '@/views/User.vue'
 import Login from '@/views/LoginForm.vue'
 import Register from '@/views/Register.vue'
 
@@ -106,6 +107,11 @@ const routes = [
     path: '/vaccinelist',
     name: 'VaccineList',
     component: VaccineList
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: User
   }
 ]
 
