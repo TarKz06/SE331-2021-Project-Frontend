@@ -60,23 +60,8 @@
 </template>
 
 <script>
-import patientService from '@/services/patientService.js'
 export default {
-  props: ['id'],
-  data() {
-    return {
-      plist: null
-    }
-  },
-  created() {
-    patientService.getEvent(this.id)
-      .then((response) => {
-        this.plist = response.data
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }
+  props: ['plist']
 }
 </script>
 
