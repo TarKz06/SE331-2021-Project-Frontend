@@ -95,9 +95,6 @@ export default {
     isDoctor(){
       return AuthService.hasRoles('ROLE_DOCTOR')
     },
-    isUser(){
-      return AuthService.hasRoles('ROLE_USER')
-    },
     isPatient(){
       return AuthService.hasRoles('ROLE_PATIENT')
     }
@@ -115,10 +112,10 @@ export default {
               name: 'Layout',
               params: {id: this.GStore.currentUser.id}
             })
-          }else if(this.isUser){
-            this.$router.push({name: 'User'})
           }else if(this.isDoctor){
             this.$router.push({ name: 'PatientList' })
+          }else{
+            this.$router.push({name: 'PatientList'})
           }
           
         })

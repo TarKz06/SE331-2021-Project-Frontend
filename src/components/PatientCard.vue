@@ -1,6 +1,6 @@
 <template>
   <q-card class="my-card">
-    <q-img :src="plist.profileimg">
+    <q-img :src="plist.imageUrl">
       <div class="absolute-bottom text-subtitle2 text-center">
         <router-link :to="{ name: 'userInfo', params: { id: plist.id } }">
           {{ plist.firstname }}
