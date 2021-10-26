@@ -67,6 +67,7 @@ import * as yup from 'yup'
 import AuthService from '@/services/AuthService.js'
 
 export default {
+  inject: ['GStore'],
   name: 'Login',
   components: {
     Form,
@@ -84,16 +85,46 @@ export default {
       schema
     }
   },
+  computed: {
+    currentUser(){
+      return localStorage.getItem('user')
+    },
+    isAdmin(){
+      return AuthService.hasRoles('ROLE_ADMIN')
+    },
+    isDoctor(){
+      return AuthService.hasRoles('ROLE_DOCTOR')
+    },
+    isUser(){
+      return AuthService.hasRoles('ROLE_USER')
+    },
+    isPatient(){
+      return AuthService.hasRoles('ROLE_PATIENT')
+    }
+  },
   methods: {
     handleLogin(user) {
       AuthService.login(user)
         .then((response) => {
           console.log(response)
           console.log(user + 'has login')
-          this.$router.push({ name: 'PatientList' })
+          if(this.isAdmin){
+            this.$router.push({name: 'PatientList'})
+          }else if(this.isPatient){
+            this.$router.push({
+              name: 'Layout',
+              params: {id: this.GStore.currentUser.id}
+            })
+          }else if(this.isUser){
+            this.$router.push({name: 'User'})
+          }else if(this.isDoctor){
+            this.$router.push({ name: 'PatientList' })
+          }
+          
         })
         .catch(() => {
-          this.message = 'could not login'
+          this.message = 'Could not login please check your username and password again.'
+          setTimeout(()=>{this.message = ''}, 2000)
         })
     }
   }
