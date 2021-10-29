@@ -113,7 +113,7 @@ export default {
               params: {id: this.GStore.currentUser.id}
             })
           }else if(this.isDoctor){
-            this.$router.push({ name: 'PatientList' })
+            this.$router.push({ name: 'DoctorPlist' })
           }else{
             this.$router.push({name: 'PatientList'})
           }
