@@ -15,12 +15,19 @@ import VaccineList from '../views/detailsPage/VaccineList.vue'
 import User from '@/views/User.vue'
 import Login from '@/views/LoginForm.vue'
 import Register from '@/views/Register.vue'
+import DoctorPlist from '@/views/DoctorPlist.vue'
 
 const routes = [
   {
     path: '/',
     name: 'PatientList',
     component: PatientList,
+    props: (route) => ({ page: parseInt(route.query.page) || 1 })
+  },
+  {
+    path: '/doctors',
+    name: 'DoctorPlist',
+    component: DoctorPlist,
     props: (route) => ({ page: parseInt(route.query.page) || 1 })
   },
   {

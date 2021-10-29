@@ -48,6 +48,7 @@
         VACCINE-LIST
       </router-link>
     </el-menu-item>
+
     <el-menu-item v-if="isAdmin" index="3">
       <router-link
         style="
@@ -58,7 +59,21 @@
         "
         :to="{ name: 'User' }"
       >
-        USER-LIST
+        USER-LISTS
+      </router-link>
+    </el-menu-item>
+
+    <el-menu-item v-if="isDoctor" index="4">
+      <router-link
+        style="
+          color: #4d47c;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 20px;
+          font-weight: bold;
+        "
+        :to="{ name: 'DoctorPlist' }"
+      >
+        PATIENT-LISTS
       </router-link>
     </el-menu-item>
   </el-menu>
@@ -77,6 +92,9 @@ export default {
   computed: {
     isAdmin() {
       return AuthService.hasRoles('ROLE_ADMIN')
+    },
+    isDoctor() {
+      return AuthService.hasRoles('ROLE_DOCTOR')
     }
   }
 }
